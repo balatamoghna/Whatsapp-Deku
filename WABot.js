@@ -57,11 +57,8 @@ client.on('ready', async () => {
     var stickerspam=new Set();
     var stp=new Set();
     var loaded=0;
-    var adding=0;
-    var add=new Set();
     var counter=0;
-    var claim=new Set();
-    var amsg=0;
+
 client.on('message', async msg => {
     
     console.log('MESSAGE RECEIVED', msg);
@@ -628,13 +625,7 @@ recentcmd.add(usr);
     sban.delete(usr);
     
     },900000);
-    setTimeout(() =>{
-    if(claim.has(usr)){
-    claim.delete(usr);}    
-    },60000);
-    
 
-} 
 
             
     
