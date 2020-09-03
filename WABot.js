@@ -359,7 +359,6 @@ Thank you in advance!
     
     } else if (msg.body.startsWith('!meme ')) {
         let mtmp = msg.body.slice(6);
-        let datetime = new Date();
         mtmp = mtmp.replace(/_/g,"__");
         mtmp = mtmp.replace(/-/g,"-");
         mtmp = mtmp.replace(/\s+/g,"-");
@@ -370,7 +369,7 @@ Thank you in advance!
         mtmp = mtmp.replace(/"'"/g,"''");
         //msg.reply(mtmp);
         let marr = mtmp.split(';');
-        const file = fs.createWriteStream(`/DIRECTORY/meme${datetime}.jpg`);
+        const file = fs.createWriteStream(`./meme.jpg`);
         //msg.reply(`https://memegen.link/${marr[0]}/${marr[1]}/${marr[2]}.jpg`);
         msg.reply('Your meme is being generated, It takes upto *10 seconds* to complete so please be patient!');
         let request = https.get(`https://memegen.link/${marr[0]}/${marr[1]}/${marr[2]}.jpg`, function(response) {
@@ -378,11 +377,11 @@ Thank you in advance!
         
         });
         setTimeout(function(){
-       const imageAsBase64 = fs.readFileSync(`/DIRECTORY/meme${datetime}.jpg`, 'base64');
+       const imageAsBase64 = fs.readFileSync(`./meme.jpg`, 'base64');
         const media = new MessageMedia('image/jpg', imageAsBase64);
         client.sendMessage(msg.from, media, { caption: 'Requested Meme!' });
         }, 8000);
-        fs.unlink(`/home/pi/Downloads/meme${datetime}.jpg`);
+        fs.unlink(`./meme.jpg`);
     } else if (msg.body == '!joke') {
         https.get(`https://official-joke-api.appspot.com/random_joke`, function(response) {
         var buffer = '';
@@ -496,7 +495,6 @@ Thank you in advance!
         } else if(msg.body.startsWith("!hbd ")){
             let chat = await msg.getChat();
             let mtmp = msg.body.slice(5);
-            let datetime = new Date();
             mtmp = mtmp.replace(/_/g,"__");
             mtmp = mtmp.replace(/-/g,"-");
             mtmp = mtmp.replace(/\s+/g,"-");
@@ -506,18 +504,18 @@ Thank you in advance!
             mtmp = mtmp.replace(/\//g,"~s");
             mtmp = mtmp.replace(/"'"/g,"''");
         //msg.reply(mtmp);
-        const file = fs.createWriteStream(`/home/pi/Downloads/meme${datetime}.jpg`);
+        const file = fs.createWriteStream(`./meme.jpg`);
         msg.reply('Incoming surprise!\nPlease be patient!');
         let request = https.get(`https://memegen.link/custom/_/${mtmp}!.jpg?alt=https://i.scdn.co/image/ab67616d0000b2731613559b6cc074d0ccec2e88`, function(response) {
         response.pipe(file);
         
         });
         setTimeout(function(){
-       const imageAsBase64 = fs.readFileSync(`/home/pi/Downloads/meme${datetime}.jpg`, 'base64');
+       const imageAsBase64 = fs.readFileSync(`./meme.jpg`, 'base64');
         const media = new MessageMedia('image/jpg', imageAsBase64);
         client.sendMessage(msg.from, media, { caption: `Happy birthday ${mtmp}!` });
         }, 8000);
-        fs.unlink(`/home/pi/Downloads/meme${datetime}.jpg`);
+        fs.unlink(`./meme.jpg`);
             
         } 
     
