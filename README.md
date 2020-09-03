@@ -27,7 +27,7 @@ Note: This project is hosted on a Raspberry Pi 4, As such uses Chromium and has 
 If you wish to run this project without a rpi, remove the existing new Client code and replace with:
 
 ```
-const client = new Client({ puppeteer: { headless: false }, session: sessionCfg });
+const client = new Client();
 client.initialize();
 ```
 
