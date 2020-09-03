@@ -1,0 +1,27 @@
+{
+  "name": "Whatsapp-Deku",
+  "version": "1.0.0",
+  "description": "✍ Short Description:\\\r This application is a Client that simulates the connection to WhatsApp Web through Puppeteer , instantiating the connection in real time.\\\r \\\r ▶ Installation:\\\r Install Whatsapp-web.js: ```npm i whatsapp-web.js```  \r Please note that Node v10.18.1+ is required due to Puppeteer.\\\r Download and install these dependencies too:  \r ```npm install popyt```  \r ```npm install youtube-dl```  \r ```npm install follow-redirects```  \r ```npm install qrcode-terminal```  \r After this is done, just do ```node WABot.js```  \r \\\r ⚡ Commands:\\\r !ping - Pong!\\\r !groupinfo - Gives you the group's info\\\r !info - Gives you Deku's info\\\r !mediainfo - Quote a message and invoke command to get its media information\\\r !quoteinfo - Quote a message and get its information\\\r !resendmedia - Quote a message and Deku will send you the media again\\\r !mtemplate - Gives you meme templates\\\r !meme - make your own meme! Do !meme template;str1;str2 to make your memes!\\\r !joke - Deku will crack a joke\\\r !anquote - Deku will give you an anime quote\\\r !ansearch - Do \"!ansearch animename\" to get details of the anime name.\\\r !insult - Deku will insult!\\\r !compliment - Deku will compliment!\\\r !del - Quote Deku's response to your command and issue !del to delete that message from everyone!\\\r !horoscope - Check your horoscope! Do !horoscope YourSign\\\r !video - Get any video search result under 7-10mins!\\\r \\\r Note: This project is hosted on a Raspberry Pi 4, As such uses Chromium and has some modifications done to Puppeteer.\r If you wish to run this project without a rpi, remove the existing new Client code and replace with:\r ```\r const client = new Client();\r client.initialize();\r ```\r Disclaimer of Liability\\\r This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with WhatsApp or any of its subsidiaries or affiliates. The official WhatsApp website can be found at https://whatsapp.com . \"WhatsApp\" as well as names, brands, emblems and related images are registered trademarks of their respective owners.\r Acknowledgments and Credits\\\r https://github.com/pedroslopez  \r \\\r Contact\\\r bala98410@gmail.com",
+  "main": "WABot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies":{
+  "follow-redirects":"^1.13.0",
+  "popyt":"^4.1.1",
+  "qrcode-terminal":"0.12.0",
+  "whatsapp-web.js":"^1.8.0",
+  "youtube-dl":"^3.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balatamoghna/Whatsapp-Deku.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/balatamoghna/Whatsapp-Deku/issues"
+  },
+  "homepage": "https://github.com/balatamoghna/Whatsapp-Deku#readme"
+}
