@@ -4,7 +4,7 @@ This application is a Client that simulates the connection to WhatsApp Web throu
 ▶ Installation:\
 Install Whatsapp-web.js: ```npm i whatsapp-web.js```  
 Please note that Node v10.18.1+ is required due to Puppeteer.\
-Download and install these dependencies too:
+Download and install these dependencies too:  
 ```npm install popyt```  
 ```npm install youtube-dl```  
 ```npm install follow-redirects```  
