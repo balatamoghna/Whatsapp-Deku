@@ -2,14 +2,14 @@
 This application is a Client that simulates the connection to WhatsApp Web through Puppeteer , instantiating the connection in real time.\
 \
 ▶ Installation:\
-Install Whatsapp-web.js: ```npm i whatsapp-web.js```
+Install Whatsapp-web.js: ```npm i whatsapp-web.js```  
 Please note that Node v10.18.1+ is required due to Puppeteer.\
 Download and install these dependencies too:
-```npm install popyt```
-```npm install youtube-dl```
-```npm install follow-redirects```
-```npm install qrcode-terminal```
-After this is done, just do ```node WABot.js```
+```npm install popyt```  
+```npm install youtube-dl```  
+```npm install follow-redirects```  
+```npm install qrcode-terminal```  
+After this is done, just do ```node WABot.js```  
 \
 ⚡ Commands:\
 !ping - Pong!\
