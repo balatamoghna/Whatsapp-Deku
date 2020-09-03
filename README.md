@@ -24,6 +24,12 @@ Please note that Node v10.18.1+ is required due to Puppeteer.\
 !video - Get any video search result under 7-10mins!\
 \
 Note: This project is hosted on a Raspberry Pi 4, As such uses Chromium and has some modifications done to Puppeteer.
+If you wish to run this project without a rpi, remove the existing new Client code and replace with:
+
+```
+const client = new Client({ puppeteer: { headless: false }, session: sessionCfg });
+client.initialize();
+```
 
 Disclaimer of Liability\
 This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with WhatsApp or any of its subsidiaries or affiliates. The official WhatsApp website can be found at https://whatsapp.com . "WhatsApp" as well as names, brands, emblems and related images are registered trademarks of their respective owners.
