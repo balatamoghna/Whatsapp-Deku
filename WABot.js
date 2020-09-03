@@ -633,7 +633,7 @@ recentcmd.add(usr);
     
     
                
-    } 
+    }} 
     else{setTimeout(()=>{counter=0;},15000);}
  //Cooldown condition close
 });
