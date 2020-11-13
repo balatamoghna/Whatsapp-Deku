@@ -4,9 +4,6 @@ const { Client, Location } = require('./index');
 const { MessageMedia } = require('whatsapp-web.js');
 var https = require('follow-redirects').https;
 const version="v1.0.0"
-const youtubedl = require('youtube-dl');
-const { YouTube } = require('popyt');
-const youtube = new YouTube('APIKEY');
 
 
 
@@ -539,76 +536,7 @@ Thank you in advance!
     });
             }
     
-    
-    
-     else if (msg.body.startsWith('!video ')) {
-         if(loaded==0){
 
- 
-         let datetime = new Date();
-         let search = msg.body.slice(7);
-        
-         
-        const videodl = await youtube.getVideo(`${search}`);
-     
-        if(videodl.url.includes("https")){
-      
-        if(videodl.minutes<=6){
-             
-
-        msg.reply(`Title:${videodl.title}\nUrl:${videodl.url} \nSeems to be the Title of the video! \nIf this is what you require,please reply !dw to this message!`);
-        }else{
-            
-        msg.reply('Video too lengthy! Only send videos upto 6 minutes!');}
-        }} 
-        else{
-        msg.reply('Command limit reached! Please try after sometime');}
-        }
-        
-        else if(msg.body =="!dw" && msg.hasQuotedMsg && (loaded ==0)){
-            const qmsg = await msg.getQuotedMessage();
-            if(qmsg.body.includes("Url:") && qmsg.fromMe){
-                let chat = await msg.getChat();
-                let datetime = new Date();
-                const file = fs.createWriteStream(`/DIRECTORY/video${datetime}.mp4`);
-                let str=qmsg.body.substr(qmsg.body.indexOf('https://'));
-                const video = youtubedl(`${str}`,
-  ['--format=18'],);
-  
-  video.on('info', function(info) {
-               loaded=1;
-                       msg.reply(`Acknowledged!
-Sending video in 20 seconds!\nYou will recieve a direct message from me!`);
-}
-);
-
-
- video.pipe(file);
-   
-   setTimeout(function(){
-       const musicAsBase64 = fs.readFileSync(`/DIRECTORY/video${datetime}.mp4`, 'base64');
-        const media = new MessageMedia('video/mp4', musicAsBase64);
-        if(chat.isGroup){
-        client.sendMessage(msg.author, media);}
-        else{
-        client.sendMessage(msg.from,media);
-            }
-        
-        loaded =0;
-        }, 20000);
-                
-                }
-            }
-        
-
-        
-        
-
-
-    
-    
-    
-    
 
 
     setTimeout(()=>{
